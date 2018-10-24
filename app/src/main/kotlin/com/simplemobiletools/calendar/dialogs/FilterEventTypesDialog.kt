@@ -6,6 +6,7 @@ import com.simplemobiletools.calendar.activities.SimpleActivity
 import com.simplemobiletools.calendar.adapters.FilterEventTypeAdapter
 import com.simplemobiletools.calendar.extensions.config
 import com.simplemobiletools.calendar.extensions.dbHelper
+import com.simplemobiletools.calendar.extensions.updateWidgets
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import kotlinx.android.synthetic.main.dialog_filter_event_types.view.*
 
@@ -32,6 +33,7 @@ class FilterEventTypesDialog(val activity: SimpleActivity, val callback: () -> U
             activity.config.displayEventTypes = selectedItems
             callback()
         }
+        activity.updateWidgets()
         dialog.dismiss()
     }
 }
